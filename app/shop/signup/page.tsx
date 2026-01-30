@@ -1,17 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export default function ShopSignup() {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
 
-  function handleSubmit(e: any) {
+  async function handleSubmit(e: any) {
     e.preventDefault();
-    console.log({ name, city, email });
-    alert("Thanks! We'll reach out soon.");
-    window.location.href = "/shop/dashboard";
+
+    try {
+      await addDoc(collection(db, "shops"), {
+        name,
+        city,
+        email,
+        createdAt: Date.now()
+      });
+
+      alert("Thanks! We'll reach out soon.");
+      window.location.href = "/shop/dashboard";
+    } catch (error) {
+      console.error("Error saving shop:", error);
+      alert("Something went wrong. Please try again.");
+    }
   }
 
   return (
