@@ -1,21 +1,31 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
-      <h1 className="text-5xl font-bold mb-4">ShopStream</h1>
-      <p className="text-xl mb-8 text-center">
+    <main style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "black",
+      color: "white",
+      textAlign: "center",
+      padding: "20px"
+    }}>
+      <h1 style={{ fontSize: "3rem" }}>ShopStream</h1>
+      <p style={{ fontSize: "1.2rem", marginTop: "10px" }}>
         Live shopping for local stores.
       </p>
 
-      <div className="max-w-md text-center space-y-4">
-        <p>
-          Go live. Show your products. Sell instantly to local customers.
-        </p>
-        <p>
-          Discover and shop from real stores in your city, live.
-        </p>
-      </div>
+      <p style={{ marginTop: "20px" }}>
+        Go live. Show your products. Sell instantly to local customers.
+      </p>
 
-      <button className="mt-10 px-6 py-3 bg-white text-black rounded-xl font-semibold">
+      <button style={{
+        marginTop: "30px",
+        padding: "12px 24px",
+        fontSize: "1rem",
+        cursor: "pointer"
+      }}>
         Join Early Access
       </button>
     </main>
