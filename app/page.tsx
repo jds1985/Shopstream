@@ -20,14 +20,16 @@ export default function Home() {
         Go live. Show your products. Sell instantly to local customers.
       </p>
 
-      <button style={{
-        marginTop: "30px",
-        padding: "12px 24px",
-        fontSize: "1rem",
-        cursor: "pointer"
-      }}>
-        Join Early Access
-      </button>
+      <a href="/shop/signup">
+        <button style={{
+          marginTop: "30px",
+          padding: "12px 24px",
+          fontSize: "1rem",
+          cursor: "pointer"
+        }}>
+          Join Early Access
+        </button>
+      </a>
     </main>
   );
 }
