@@ -11,6 +11,7 @@ export default function ShopSignup() {
     e.preventDefault();
     console.log({ name, city, email });
     alert("Thanks! We'll reach out soon.");
+    window.location.href = "/shop/dashboard";
   }
 
   return (
